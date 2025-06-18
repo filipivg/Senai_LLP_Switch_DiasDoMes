@@ -12,11 +12,9 @@ public class diadomes {
         System.out.print("Digite o nome do mês ou o número do mês (ex: Janeiro ou 1): ");
         String Mes = leia.nextLine().toLowerCase();
 
-        // Verifica se a entrada é número ou nome
         try {
             numeroMes = Integer.parseInt(Mes);
         } catch (NumberFormatException e) {
-            // Se não for número, verifica o nome do mês
             switch (Mes) {
                 case "janeiro": numeroMes = 1; break;
                 case "fevereiro": numeroMes = 2; break;
@@ -37,7 +35,6 @@ public class diadomes {
             }
         }
 
-        // Define o nome do mês baseado no número (caso a entrada tenha sido numérica)
         switch (numeroMes) {
             case 1: nomeMes = "janeiro"; dias = 31; break;
             case 2: 
@@ -45,7 +42,6 @@ public class diadomes {
                 System.out.print("Digite o ano para verificar se é bissexto: ");
                 ano = leia.nextInt();
 
-                // Verifica se o ano é bissexto
                 if ((ano % 4 == 0 && ano % 100 != 0) || (ano % 400 == 0)) {
                     dias = 29;
                 } else {
@@ -68,7 +64,6 @@ public class diadomes {
                 return;
         }
 
-        // Exibe o resultado final
         System.out.println("\nO mês de " + nomeMes + " tem " + dias + " dias.");
 
         leia.close();
